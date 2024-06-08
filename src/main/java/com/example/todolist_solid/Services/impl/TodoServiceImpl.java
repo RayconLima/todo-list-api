@@ -11,14 +11,12 @@ import java.util.Optional;
 
 @Service
 public class TodoServiceImpl implements TodoService {
-    // Singleton: Injetar os componentes do Spring com @Autowired.
     @Autowired
     private TodoRepository todoRepository;
 
     @Override
     public List<Todo> getAll()
     {
-        // Buscar todos os Todos.
         return (List<Todo>) todoRepository.findAll();
     }
 
@@ -57,7 +55,6 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<Todo> delete(Long id) {
-        // Deletar Todo por ID.
         todoRepository.deleteById(String.valueOf(id));
         return getAll();
     }
