@@ -8,6 +8,7 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private Boolean finished;
     @Column(name = "todo_id")
     Long todoId;
 
@@ -21,9 +22,19 @@ public class Task {
         return name;
     }
 
+    public Boolean getFinished()
+    {
+        return finished;
+    }
+
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public void setFinished(Boolean finished)
+    {
+        this.finished = finished;
     }
 
     public void setTodoId(String todoId)

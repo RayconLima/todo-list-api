@@ -26,6 +26,11 @@ public class TodoRestController {
         return ResponseEntity.ok(todoService.getById(id)).getBody();
     }
 
+    @GetMapping("/{id}/tasks")
+    public Optional<Object> getTasksById(@PathVariable Long id) {
+        return ResponseEntity.ok(todoService.getTaskById(id)).getBody();
+    }
+
     @PostMapping()
     public ResponseEntity<Todo> store(@RequestBody Todo todo) {
         todoService.insert(todo);

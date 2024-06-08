@@ -6,6 +6,7 @@ import com.example.todolist_solid.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,34 +16,49 @@ public class TodoServiceImpl implements TodoService {
     private TodoRepository todoRepository;
 
     @Override
-    public Iterable<Todo> getAll()
+    public List<Todo> getAll()
     {
         // Buscar todos os Todos.
-        return todoRepository.findAll();
+        return (List<Todo>) todoRepository.findAll();
     }
 
     @Override
     public Optional<Todo> getById(Long id) {
-        Optional<Todo> todo = todoRepository.findById(String.valueOf(id));
-        return todo; // No need to call get() here
+        return todoRepository.findById(String.valueOf(id));
     }
 
     @Override
-    public void insert(Todo todo) {
-        todoRepository.save(todo);
-    }
+    public Optional<Object> getTaskById(Long id) {
+        Optional<Todo> todoOptional = todoRepository.findById(String.valueOf(id));
 
-    @Override
-    public void update(Long id, Todo todo) {
-        Optional<Todo> todoBd = todoRepository.findById(String.valueOf(id));
-        if (todoBd.isPresent()) {
-            todoRepository.save(todo);
+        if (todoOptional.isPresent()) {
+            Todo todo = todoOptional.get();
+            return Optional.ofNullable(todo.getTasks());
+        } else {
+            return Optional.empty();
         }
     }
 
     @Override
-    public void delete(Long id) {
+    public List<Todo> insert(Todo todo) {
+        todoRepository.save(todo);
+        return getAll();
+    }
+
+    @Override
+    public List<Todo> update(Long id, Todo todo) {
+        Optional<Todo> todoBd = todoRepository.findById(String.valueOf(id));
+        if (todoBd.isPresent()) {
+            todoRepository.save(todo);
+        }
+
+        return getAll();
+    }
+
+    @Override
+    public List<Todo> delete(Long id) {
         // Deletar Todo por ID.
         todoRepository.deleteById(String.valueOf(id));
+        return getAll();
     }
 }
