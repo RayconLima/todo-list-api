@@ -1,4 +1,4 @@
-# Read Me First
+# Project to DIO
 The following was discovered as part of building this project:
 
 * The original package name 'com.example.todolist-solid' is invalid and this project uses 'com.example.todolist_solid' instead.
