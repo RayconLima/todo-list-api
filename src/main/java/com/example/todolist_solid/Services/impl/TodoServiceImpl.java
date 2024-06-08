@@ -14,11 +14,9 @@ public class TodoServiceImpl implements TodoService {
     @Autowired
     private TodoRepository todoRepository;
 
-    // Strategy: Implementar os métodos definidos na interface.
-    // Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
-
     @Override
-    public Iterable<Todo> getAll() {
+    public Iterable<Todo> getAll()
+    {
         // Buscar todos os Todos.
         return todoRepository.findAll();
     }
@@ -36,7 +34,6 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public void update(Long id, Todo todo) {
-        // Buscar Todo por ID, caso exista:
         Optional<Todo> todoBd = todoRepository.findById(String.valueOf(id));
         if (todoBd.isPresent()) {
             todoRepository.save(todo);
