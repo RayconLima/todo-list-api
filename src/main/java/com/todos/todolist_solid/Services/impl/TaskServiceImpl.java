@@ -1,8 +1,8 @@
-package com.example.todolist_solid.Services.impl;
+package com.todos.todolist_solid.Services.impl;
 
-import com.example.todolist_solid.Services.TaskService;
-import com.example.todolist_solid.models.Task;
-import com.example.todolist_solid.repositories.TaskRepository;
+import com.todos.todolist_solid.Services.TaskService;
+import com.todos.todolist_solid.models.Task;
+import com.todos.todolist_solid.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

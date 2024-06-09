@@ -1,9 +1,8 @@
-package com.example.todolist_solid.models;
+package com.todos.todolist_solid.models;
 
 import jakarta.persistence.*;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
