@@ -1,4 +1,4 @@
-package com.todos.todolist_solid;
+package com.todos.todolist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
