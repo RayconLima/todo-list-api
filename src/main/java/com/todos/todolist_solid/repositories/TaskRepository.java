@@ -1,6 +1,6 @@
-package com.example.todolist_solid.repositories;
+package com.todos.todolist_solid.repositories;
 
-import com.example.todolist_solid.models.Task;
+import com.todos.todolist_solid.models.Task;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

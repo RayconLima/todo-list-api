@@ -1,7 +1,7 @@
-package com.example.todolist_solid.controllers;
+package com.todos.todolist_solid.controllers;
 
-import com.example.todolist_solid.Services.TaskService;
-import com.example.todolist_solid.models.Task;
+import com.todos.todolist_solid.Services.TaskService;
+import com.todos.todolist_solid.models.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

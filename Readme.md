@@ -1,30 +1,49 @@
-# Project to DIO
-The following was discovered as part of building this project:
+Desafio: API Todo List com Spring Boot
 
-* The original package name 'com.example.todolist-solid' is invalid and this project uses 'com.example.todolist_solid' instead.
+Introdução:
 
-# Getting Started
+Este desafio visa desenvolver uma API RESTful para gerenciar uma lista de tarefas utilizando Spring Boot. A API deve permitir a criação, leitura, atualização e exclusão de tarefas, além de outras funcionalidades relevantes.
 
-### Reference Documentation
-For further reference, please consider the following sections:
+Tecnologias:
+- Spring Boot
+- Spring Data JPA
+- Banco de dados relacional (h2database)
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.3.1-SNAPSHOT/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.3.1-SNAPSHOT/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.3.1-SNAPSHOT/reference/htmlsingle/index.html#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.3.1-SNAPSHOT/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
-* [OpenFeign](https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/)
+Funcionalidades:
+- Criar uma tarefa (Todo: name, description, priority, finish)
+- Ler todas as tarefas
+- Ler uma tarefa específica por ID
+- Atualizar uma tarefa (Todo: name, description, priority, finish)
+- Excluir uma tarefa
+- Marcar uma tarefa como finalizada
+- Criar uma subtarefa (Task: name, description, finish)
+- Ler todas as subtarefas
+- Ler uma subtarefa específica por ID
+- Atualizar uma subtarefa (Task: name, description, finish)
+- Excluir uma subtarefa
+- Marcar uma subtarefa como finalizada
 
-### Guides
-The following guides illustrate how to use some features concretely:
+Requisitos:
+- Criar um projeto Spring Boot
+- Definir entidades para representar tarefas e outros dados relevantes
+- Implementar repositórios Spring Data JPA para acesso ao banco de dados
+- Criar controladores RESTful para lidar com requisições HTTP
+- Testar a API com ferramentas como Postman, Insomnia, Hoppscotch ou swagger-ui
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+## Como Executar
 
-### Additional Links
-These additional references should also help you:
+- Clonar repositório git
+- Construir o projeto:
+```
+$ ./mvnw clean package
+```
+- Executar a aplicação:
+```
+$ java -jar target/todolist-0.0.1-SNAPSHOT.jar
+```
+A API poderá ser acessada em localhost:8080. O Swagger poderá ser visualizado em localhost:8080/swagger-ui.html
 
-* [Declarative REST calls with Spring Cloud OpenFeign sample](https://github.com/spring-cloud-samples/feign-eureka)
-
+Recursos Úteis:
+- Documentação Spring Boot: https://start.spring.io/
+- Documentação Spring Data JPA: https://spring.io/projects/spring-data-jpa
+- Exemplos de API Todo List: https://github.com/osopromadze/Spring-Boot-Blog-REST-API
