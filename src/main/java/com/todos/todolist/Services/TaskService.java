@@ -1,6 +1,6 @@
-package com.todos.todolist_solid.Services;
+package com.todos.todolist.Services;
 
-import com.todos.todolist_solid.models.Task;
+import com.todos.todolist.models.Task;
 
 import java.util.List;
 import java.util.Optional;
