@@ -2,16 +2,19 @@ package com.example.todolist_solid.Services;
 
 import com.example.todolist_solid.models.Todo;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface TodoService {
-    Iterable<Todo> getAll();
+    List<Todo> getAll();
 
     Optional<Todo> getById(Long id);
 
-    void insert(Todo todo);
+    Optional<Object> getTaskById(Long id);
 
-    void update(Long id, Todo todo);
+    List<Todo> insert(Todo todo);
 
-    void delete(Long id);
+    List<Todo> update(Long id, Todo todo);
+
+    List<Todo> delete(Long id);
 }

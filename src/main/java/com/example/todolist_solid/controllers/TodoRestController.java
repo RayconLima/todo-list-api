@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("todos")
+@RequestMapping(value = "/todos")
 public class TodoRestController {
 
     @Autowired
     private TodoService todoService;
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<Iterable<Todo>> findAll()
     {
         return ResponseEntity.ok(todoService.getAll());
@@ -26,7 +26,12 @@ public class TodoRestController {
         return ResponseEntity.ok(todoService.getById(id)).getBody();
     }
 
-    @PostMapping
+    @GetMapping("/{id}/tasks")
+    public Optional<Object> getTasksById(@PathVariable Long id) {
+        return ResponseEntity.ok(todoService.getTaskById(id)).getBody();
+    }
+
+    @PostMapping()
     public ResponseEntity<Todo> store(@RequestBody Todo todo) {
         todoService.insert(todo);
         return ResponseEntity.ok(todo);
